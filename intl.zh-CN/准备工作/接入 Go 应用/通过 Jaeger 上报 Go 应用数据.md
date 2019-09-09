@@ -16,7 +16,7 @@
 
 2.  修改配置。 
 
-    **说明：** 请将 `<endpoint>` 替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的“获取接入点信息”。
+    **说明：** 请将 `<endpoint>` 替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
     ``` {#codeblock_hte_4ir_cep}
     sender := transport.NewHTTPTransport(
@@ -63,7 +63,7 @@
 
 2.  创建 Trace 对象。 
 
-    **说明：** 请将 `<endpoint>` 替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的“获取接入点信息”。
+    **说明：** 请将 `<endpoint>` 替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
     ``` {#codeblock_ryq_eun_lr2}
     func NewJaegerTracer(service string) (opentracing.Tracer, io.Closer) {
@@ -133,7 +133,7 @@
 
 3.  下载原生 Jaeger Agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent)，并用以下参数启动 Agent，以将数据上报至链路追踪 Tracing Analysis。 
 
-    **说明：** 请将 `<endpoint>` 替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的“获取接入点信息”。
+    **说明：** 请将 `<endpoint>` 替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
     ``` {#codeblock_y2b_ucp_enr}
     // reporter.grpc.host-port 用于设置网关，网关因地域而异。 例如：
