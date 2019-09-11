@@ -139,6 +139,8 @@ Zipkin 是一款开源的分布式实时数据追踪系统（Distributed Trackin
 
 答：请检查运行过程中是否有提示，并检查 endpoint\_url 的配置是否正确。例如，错误 `failed the request with status code 403` 表明用户名或密码不正确。
 
+## 更多信息 {#section_mrz_40b_j9s .section}
+
 [Zipkin 官网](https://zipkin.io/)
 
 [Zipkin-go 源码](https://github.com/openzipkin/zipkin-go)
