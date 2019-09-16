@@ -465,7 +465,7 @@ Zipkin 已经开发多年，对各种框架的支持比较齐全，例如[以下
 
 答：请断点调试 zipkin2.reporter.okhttp3.HttpCall 中的 parseResponse 方法，查看上报数据时返回值。如果报 403 错误，表示用户名配置不正确，需要检查 endpoint 配置。
 
-## 更多信息 {#section_mrz_40b_j9s .section}
+## 更多信息 { .section}
 
 [brave-webmvc-example](https://github.com/openzipkin/brave-webmvc-example)
 
