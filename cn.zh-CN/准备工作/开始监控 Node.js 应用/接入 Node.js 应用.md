@@ -94,6 +94,8 @@ app.listen(3000, '127.0.0.1', function () {
 });
 ```
 
+## 更多信息 { .section}
+
 [jaeger-client-node](https://github.com/jaegertracing/jaeger-client-node)
 
 [opentracing-javascript](https://github.com/opentracing/opentracing-javascript)
