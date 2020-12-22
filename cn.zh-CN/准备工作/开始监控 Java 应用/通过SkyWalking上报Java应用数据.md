@@ -90,7 +90,7 @@ SkyWalking是一款广受欢迎的国产APM（Application Performance Monitoring
 
 答：可能是由于链路追踪的数据未上报。您需要检查是否有链路追踪的数据上报，可以查看\{skywalking agent path\}/logs/skywalking-api.log内容。如果有数据上报，则显示如下图所示。
 
-![pg_xtrace_skywalking](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1804948951/p89094.png)
+![pg_xtrace_skywalking](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1804948951/p89094.png)
 
 如果未产生数据上报，则可能原因是：开启采样、设置过滤或未触发生成链路追踪的请求。
 
