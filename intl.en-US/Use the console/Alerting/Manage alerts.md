@@ -1,37 +1,37 @@
 # Manage alerts
 
-On the alert Policies page, you can manage all the alert rules under your account and query the history of alert events and alert posts.
+On the Alert Policies page, you can manage all the alert rules within your Alibaba Cloud account and query the history of alert events and alert notifications.
 
 ## Manage alert rules
 
-1.  Log on to the console. Click the target application in **Applications**. In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
+1.  Log on to the console. On the **application list** page, click the target application. In the left-side navigation pane, choose **Notification alarm** \> **Alert policy management**.
 
-2.  On the **Alert Rules** tab, enter the alert name in the search box, then click **Search**.
+2.  On the **alarm rules and history** page, enter an alarm name in the search box, and click **search**.
 
-    **Note:** You can enter part of an alert name in the search box to perform a fuzzy search.
+    ![Alarm History](../images/p43290.png)
 
-3.  In the **Actions** column, you may take actions on the filtered alert rules, as needed:
+3.  In the search results list of **operation** column, on-demand target alarm rule to take the following actions:
 
-    -   To edit an alert rule, click **Edit**. In the Edit Alert dialog box, edit the alert rule, and click **Save**.
-    -   To delete an alert rule, click **Delete**. In the Delete dialog box, click **Delete**.
-    -   To start a stopped alert rule, click **Start**, and in OK dialog box, click **Start**.
-    -   To stop a running alert rule, click **Stop**, and then click **OK** in the Stop dialog box.
-    -   To view the alert event history and alert post history, click **View Alert Detail**, and view related records on the **Alert Event History** tab.
+    -   To edit an alarm rule, click **edit**. In the edit alarm dialog box, edit the alarm rule and click **save**.
+    -   To delete an alarm rule, click **delete**. In the delete dialog box, click **delete**.
+    -   To start a stopped alert rule, click **start**. In the start dialog box, click **start**.
+    -   To stop the started alarm rule, click **stop**. In the stop dialog box, click **OK**.
+    -   To view the alert event history and alert sending history, click **alert history**. You can view the **alert event history** and **alert sending History** tabs.
 
-## Query alert history
+## Query the alert history
 
-You can view historical records about when and why an alert rule was triggered, and about the alert notification records sent to specified alert contacts on the **Alert History** tab.
+You can search for alarm history on the **alarm history** page, such as the time when an alarm rule is triggered and the alarm notifications sent to specific alarm contacts after the alarm rule is triggered.
 
-1.  On the Alert Policies page, click the **Alert History** tab.
+1.  In the left-side navigation pane, choose **Notification alarm** \> **Alert policy management**.
 
-2.  On the **Alert History** tab, select or enter the **Alert Type**, **Trigger State** and **Alert Name**, and then click **Search**.
+2.  On the **alarm history** tab, select or enter the **event trigger status** and **alarm name**, and click **search**.
 
-    The line charts and bar charts on the tab show the relationship between alert data and alert trigger events, also the alert trigger details. The line chart represents the alert data and the bar chart represents the alert events.
+3.  On the alert event history tab page, view the history of alert events.
 
-3.  Scroll down to the bottom, view the history of alert events on the Alert Event History tab.
+    **Note:** An alarm notification is sent only when the **triggering status** is **triggered** \(red dot in the trigger column\).
 
-    **Note:** Alert notifications are sent only when the trigger state is **triggered**. \(**Trigger** column contains a red dot.\)
+    ![Alarm Event](../images/p43292.png)
 
-4.  Click the Alert Post History tab to view the records of alert notifications \(such as SMS and email\) that were sent for triggered alerts.
+4.  Click the alarm sending History tab to view the records of alarm notifications \(by SMS, email, or other means\) that have triggered alarms.
 
 
