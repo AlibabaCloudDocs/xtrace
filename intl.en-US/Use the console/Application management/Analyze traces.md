@@ -10,17 +10,23 @@ After analyzing the call link information of an application on the call link ana
 
 3.  In the left-side navigation pane, click**Trace Analysis**, InTrace AnalysisPage to filter trace information, as shown in the following figure.
 
-    -   Click**Comprehensive condition**Input box, which can be added simultaneously or separately**Span name**,**IP**And**Tag**Three filter criteria. When you add a filter, you can add one**Span name**Or**IP**,, And multiple**Tag**.
+    -   Click **Comprehensive condition**input box, which can be added simultaneously or separately **Span name**, **IP** and**Label**. Three filter criteria. When you add a filter, you can add one **Span name** or **IP**, And multiple **Label**.
     -   In**Time consumed \(\> ms\)**Enter a specific response time in the input box to query trace information that is later than this time consumption.
     -   Check**Exception**Check box to query trace information with exceptions.
-4.  Click**Query**To view the filtered trace information, including:
+4.  Click**Search**To view the filtered trace information, including:
 
     -   Time series curves of time consumption and number of spans.
     -   The distribution chart of the number of spans and the time consumed.
     -   You can filter call link information by Span, IP address, or Tag.
-5.  From**Group by**List, select Span, IP, or Tag to filter groups. For example, select Tag**userId**.
+    ![Trace Analysis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7955458061/p63933.png)
 
-6.  Click a userId. A list of trace information related to this userId is displayed.
+5.  From**Group by**List, select Span, IP, or Tag to filter groups. For example, select Tag**IP**.
+
+    ![Trace List](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7955458061/p63959.png)
+
+6.  Click a IP. A list of trace information related to this IP is displayed.
+
+    ![Trace List](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7955458061/p63960.png)
 
 
 ## View the link topology
@@ -28,6 +34,8 @@ After analyzing the call link information of an application on the call link ana
 The link topology mainly displays the topology of the dependency between applications after conditional filtering, as well as the request ratio, call speed, and time consumption ratio between applications. In consideration of the performance experience, the link topology can pull up to 5000 link requests for aggregation.
 
 1.  ClickLink topologyTab to view the link topology.
+
+    ![Trace Topology ](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4876458061/p66600.png)
 
     **Note:**
 
@@ -39,6 +47,8 @@ The link topology mainly displays the topology of the dependency between applica
 Real-time aggregation is a call link table that aggregates call links that have been filtered by conditions based on Span names and application names. In consideration of performance experience, real-time aggregation supports pulling up to 5000 link requests for aggregation.
 
 1.  ClickReal-time aggregationTab to view the real-time aggregation link table.
+
+    ![Trace Real-time Aggregation](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4876458061/p66616.png)
 
     **Note:**
 
@@ -55,9 +65,13 @@ Real-time aggregation is a call link table that aggregates call links that have 
 
     InCall linkYou can view the Span name, application name, status, IP address/machine name, log generation time, and Timeline of a call chain.
 
-    **Note:** **IP address**Whether the IP address or machine name is displayed depends onApplication SettingsThe display configuration on the page. For more information, see[Manage applications and tags](/intl.en-US/Use the console/Application management/Manage applications and tags.md).
+    **Note:** **IP address**Whether the IP address or machine name is displayed depends onApplication SettingsThe display configuration on the page. For more information, see[Manage apps and tags](/intl.en-US/Use the console/Application management/Manage applications and tags.md).
+
+    ![Page Trace](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4876458061/p63969.png)
 
 2.  Place the cursor over a Span name to view the length, start time, Tag, and log events of the Span.
+
+    ![Overlay Tag and Log Events](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4876458061/p63977.png)
 
 
 ## Set the query time range
@@ -72,7 +86,7 @@ You can select a preset time range or enter a custom time range.
 
 ![Time Picker](../images/p53830.png "Query time range selector")
 
-[Preparations overview](/intl.en-US/Setup/Preparations overview.md)
+[Before you begin](/intl.en-US/Setup/Before you begin.md)
 
-[Manage applications and tags](/intl.en-US/Use the console/Application management/Manage applications and tags.md)
+[Manage apps and tags](/intl.en-US/Use the console/Application management/Manage applications and tags.md)
 
