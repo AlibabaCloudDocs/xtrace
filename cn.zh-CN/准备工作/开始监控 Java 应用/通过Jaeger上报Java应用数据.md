@@ -45,14 +45,12 @@
 
     Tracer对象可以用来创建Span对象以便记录分布式操作时间、通过Extract/Inject方法跨机器透传数据、或设置当前Span。Tracer对象还配置了上报数据的网关地址、本机IP地址、采样率、服务名等数据。您可以通过调整采样率来减少因上报数据产生的开销。
 
-    **说明：** 请将`<endpoint>`替换成链路追踪控制台集群设置页面，https://yuque.antfin-inc.com/aliwareid/wiki/itb0o9上相应客户端和地域的接入点。获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
+    **说明：** 请将`<endpoint>`替换成链路追踪控制台集群设置页面相应客户端和地域的接入点。获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
     ```
-    // 将manualDemo替换为您的应用名称。
-    io.jaegertracing.Configuration config = new io.jaegertracing.Configuration("manualDemo");
+    // 将manualDemo替换为您的应用名称io.jaegertracing.Configuration config = new io.jaegertracing.Configuration("manualDemo");
     io.jaegertracing.Configuration.SenderConfiguration sender = new io.jaegertracing.Configuration.SenderConfiguration();
-    // 将 <endpoint> 替换为控制台概览页面上相应客户端和地域的接入点。
-    sender.withEndpoint("<endpoint>");
+    // 将 <endpoint> 替换为控制台概览页面上相应客户端和地域的接入点sender.withEndpoint("<endpoint>");
     config.withSampler(new io.jaegertracing.Configuration.SamplerConfiguration().withType("const").withParam(1));
     config.withReporter(new io.jaegertracing.Configuration.ReporterConfiguration().withSender(sender).withMaxQueueSize(10000));
     GlobalTracer.register(config.getTracer());
@@ -143,7 +141,7 @@
             }
             return spanBuilder.start();
         }
-        								
+                                        
         ```
 
 
@@ -187,7 +185,7 @@
 
 2.  添加OpenTracing Tracer Bean。
 
-    **说明：** 请将`<endpoint>`替换成链路追踪控制台集群设置页面，https://yuque.antfin-inc.com/aliwareid/wiki/itb0o9上相应客户端和地域的接入点。获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
+    **说明：** 请将`<endpoint>`替换成链路追踪控制台集群设置页面相应客户端和地域的接入点。获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
     ```
     @Bean
