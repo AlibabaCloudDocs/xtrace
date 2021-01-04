@@ -40,8 +40,6 @@ SkyWalking采集慢请求数据的工作流程如图所示。
 
 1.  在**慢请求分析**页面的**任务列表**区域单击目标任务。
 
-    ![慢请求分析](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3192607951/p139677.png)
-
     耗时超过阈值的Span将显示在**Sampled Traces**区域。
 
 2.  在**Sampled Traces**区域单击目标Span，并观察页面右侧的**线程栈**区域。
@@ -56,8 +54,6 @@ SkyWalking采集慢请求数据的工作流程如图所示。
 1.  在**慢请求分析**页面的**任务列表**区域单击目标任务右侧的**查看任务详情**。
 
 2.  在**任务详情**对话框的**日志**区域查看详细信息。
-
-    ![db_slow_request_analysis_job_details](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4192607951/p139680.png)
 
     -   如果**实例**字段末尾含有监控的Agent IP地址，且**操作类型**为`EXECUTION_FINISHED`或`EXECUTION_NOTIFY`，则说明网络连接正常，只是因为没有耗时超过阈值的Span。
     -   如果不符合上述描述，则说明网络连接有问题，请稍后重试。
