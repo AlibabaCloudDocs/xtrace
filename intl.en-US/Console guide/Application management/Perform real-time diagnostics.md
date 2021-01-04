@@ -24,8 +24,6 @@ After data is reported to Tracing Analysis, the components of Tracing Analysis p
 
     -   The chart that shows the number of requests and the elapsed time distribution of requests
     -   The list of traces
-    ![Real-time Analysis](../images/p71146.png)
-
 
 ## View the waterfall chart of a trace
 
@@ -45,7 +43,5 @@ After data is reported to Tracing Analysis, the components of Tracing Analysis p
 ## View the list of aggregated traces
 
 1.  Click the Interface Aggregation tab to view the list of traces that are aggregated based on the span name.
-
-    ![Interface Aggregation](../images/p71206.png)
 
 
