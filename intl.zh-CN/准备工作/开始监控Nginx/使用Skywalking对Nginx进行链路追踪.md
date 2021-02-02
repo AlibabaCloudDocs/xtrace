@@ -49,7 +49,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 3.  访问Nginx页面。
 
-    -   在浏览器上访问`localhost/nginx.conf`。
+    -   在浏览器访问`localhost/nginx.conf`。
     -   执行命令`curl "localhost/nginx.conf"`。
 
 ## 通过Dockerfile配置skywalking-nginx-lua
@@ -84,7 +84,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 4.  访问Nginx页面。
 
-    -   在浏览器上访问`localhost/nginx.conf`。
+    -   在浏览器访问`localhost/nginx.conf`。
     -   执行命令`curl "localhost/nginx.conf"`。
 
 ## 在ECS上配置skywalking-nginx-lua
