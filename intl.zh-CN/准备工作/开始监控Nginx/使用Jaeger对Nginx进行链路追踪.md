@@ -47,7 +47,7 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
 
 3.  访问Nginx页面。
 
-    在浏览器上访问localhost/nginx.conf或者curl "localhost/nginx.conf"。
+    在浏览器访问localhost/nginx.conf或者curl "localhost/nginx.conf"。
 
 4.  查看Nginx链路数据。
 
