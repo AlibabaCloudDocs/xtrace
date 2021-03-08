@@ -16,5 +16,5 @@ After either of these permission polices is attached to a RAM user, the RAM user
 **Related topics**  
 
 
-[t1134134.md\#]()
+[Grant different permissions to RAM users](/intl.en-US/Access control/Grant different permissions to RAM users.md)
 
