@@ -2,10 +2,6 @@
 
 Before you can view the trace data of your application in the Tracing Analysis console, you must use a client to report the trace data to Tracing Analysis. This topic shows you how to use Jaeger to report Go application data.
 
-
-
-
-
 ## Quick start
 
 1.  Run the following command to download the [Demo](http://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/tracingtest.zip) file to the GOPATH/src directory:
@@ -16,7 +12,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 2.  Modify the configuration.
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     sender := transport.NewHTTPTransport(
@@ -64,7 +60,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 2.  Create a Tracer object.
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     func NewJaegerTracer(service string) (opentracing.Tracer, io.Closer) {
@@ -135,7 +131,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 3.  Download the native Jaeger agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent) and set the reporter.grpc.host-port parameter to start the agent. This way, data can be reported to Tracing Analysis.
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     // Reporter. grpc. host-port is used to set the gateway. The Gateway varies according to the region. Example:
