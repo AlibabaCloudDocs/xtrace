@@ -1,5 +1,7 @@
 # Overview
 
+If multiple users in your enterprise need to collaborate on resources, RAM allows you to avoid sharing the accesskey of your Alibaba Cloud primary account with other users, and grant users the minimum permissions needed. this reduces the information security risks of your enterprise.
+
 ## Scenarios
 
 The following examples describe how to use RAM to implement access control:
