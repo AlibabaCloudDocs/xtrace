@@ -2,8 +2,6 @@
 
 Before you can view the trace data of your application in the Tracing Analysis console, you must use a client to report the trace data to Tracing Analysis. This topic shows you how to use Jaeger to report the data of .NET applications. The method also applies to C\# applications.
 
-
-
 [Jaeger](https://www.jaegertracing.io/) is an open source distributed tracing system. It was launched by Uber and has been widely used at Uber. It is compatible with the OpenTracing API and has joined the [Cloud Native Computing Foundation \(CNCF\)](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/). Jaeger is used to aggregate real-time monitoring data that is collected from multiple heterogeneous systems.
 
 The OpenTracing community provides many components that support the following .NET frameworks:
@@ -12,8 +10,6 @@ The OpenTracing community provides many components that support the following .N
 -   [Entity Framework Core](https://github.com/opentracing-contrib/csharp-netcore)
 -   [.NET Core BCL types \(HttpClient\)](https://github.com/opentracing-contrib/csharp-netcore)
 -   [gRPC](https://github.com/opentracing-contrib/csharp-netcore)
-
-
 
 ## Use ASP.NET Core to instrument a .NET application
 
