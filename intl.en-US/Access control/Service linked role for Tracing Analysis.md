@@ -8,7 +8,7 @@ The service linked role for Tracing Analysis, AliyunServiceRoleForXtrace, is a R
 
 ## Scenarios for using the AliyunServiceRoleForXtrace role
 
-The service linked role AliyunServiceRoleForXtrace is automatically created. Tracing Analysis uses the AliyunServiceRoleForXtrace role to obtain the permissions to use the resources of the [Container Service for Kubernetes \(ACK\)](https://help.aliyun.com/document_detail/86737.html#concept-cbm-1zc-l2b), [Log Service](https://help.aliyun.com/document_detail/48869.html#concept-mt2-ykn-vdb), [Elastic Compute Service \(ECS\)](https://help.aliyun.com/document_detail/25367.html#EcsWelcome), and [Virtual Private Cloud \(VPC\)](https://help.aliyun.com/document_detail/34217.html#concept-kbk-cpz-ndb) services.
+The service linked role AliyunServiceRoleForXtrace is automatically created. Tracing Analysis uses the AliyunServiceRoleForXtrace role to obtain the permissions to use the resources of the [Container Service for Kubernetes \(ACK\)](/intl.en-US/Product Introduction/What is Container Service for Kubernetes?.md), [Log Service](/intl.en-US/Product Introduction/What is Log Service?.md), [Elastic Compute Service \(ECS\)](/intl.en-US/Product Introduction/What is ECS?.md), and [Virtual Private Cloud \(VPC\)](/intl.en-US/Product Introduction/What is a VPC?.md) services.
 
 ## Permissions of the AliyunServiceRoleForXtrace role
 
