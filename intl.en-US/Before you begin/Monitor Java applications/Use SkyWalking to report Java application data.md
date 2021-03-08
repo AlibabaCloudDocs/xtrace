@@ -7,8 +7,6 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 **Warning:** Logs, plug-ins, and configuration files are all placed in the Agent folder. Do not change the folder structure.
 
-
-
 SkyWalking is a popular application performance monitoring \(APM\) service developed in China. SkyWalking is designed for microservices, cloud-native architectures, and container-based architectures. Container-based architectures include Docker, Kubernetes, and Mesos. The core of SkyWalking is a distributed tracing system, which is a top-level project of Apache Software Foundation.
 
 To use SkyWalking to report Java application data to the Tracing Analysis console, you must first instrument the application. SkyWalking not only provides auto-instrument agents such as Dubbo, gRPC, JDBC, OkHttp, Spring, Tomcat, Struts, and Jedis, but also allows you to manually instrument applications. This topic shows you how to automatically instrument applications.
