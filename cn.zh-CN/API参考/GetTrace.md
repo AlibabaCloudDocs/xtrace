@@ -1,6 +1,6 @@
 # GetTrace
 
-调用 GetTrace 获取调用链路详情。
+调用GetTrace接口获取调用链路详情。
 
 ## 调试
 
@@ -10,38 +10,43 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|GetTrace|系统规定参数，取值为 `GetTrace`。 |
-|RegionId|String|是|cn-beijing|地域 ID，例如杭州填写为 `cn-hangzhou`，北京填写为`cn-beijing` 等。 |
-|TraceID|String|是|1c6881aab84191a4|调用链 ID，链路请求的唯一标识。 |
-|AppType|String|否|XTRACE|应用类型，非必选项，可填写为 `XTRACE` 或不填。 |
+|Action|String|是|GetTrace|系统规定参数，取值为GetTrace。 |
+|RegionId|String|是|cn-beijing|地域ID。 |
+|TraceID|String|是|1c6881aab84191a4|调用链ID，链路请求的唯一标识。 |
+|AppType|String|否|XTRACE|应用类型，取值为`XTRACE`或空。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求 ID。上报出现异常时，可添加工单并根据 RequestId 查询失败原因。 |
-|Spans|Array| |链路详情信息。 |
+|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求ID。 |
+|Spans|Array of Span| |Span列表。 |
 |Span| | | |
-|Duration|Long|1000|耗时，单位是微秒。例如 1000 表示 1 毫秒。 |
-|HaveStack|Boolean|false|是否有 Child Span。 |
-|LogEventList|Array| |链路数据中的 Log Event。 |
+|Duration|Long|1000|耗时，单位为微秒（ms）。 |
+|HaveStack|Boolean|false|是否有子Span。取值：
+
+ -   `true`：有子Span。
+-   `false`：无子Span。 |
+|LogEventList|Array of LogEvent| |日志事件列表。 |
 |LogEvent| | | |
-|TagEntryList|Array| |返回的 Tag 列表。 |
+|TagEntryList|Array of TagEntry| |标签列表。 |
 |TagEntry| | | |
-|Key|String|logLevel|Log Event 中的 Tag Key。 |
-|Value|String|Warning|Log Event 中的 Value。 |
-|Timestamp|Long|1583683202047000|Log Event 的产生时间。 |
-|OperationName|String|/api|某个埋点名称，又称为 Span Name。 |
+|Key|String|logLevel|日志事件的标签键。 |
+|Value|String|Warning|日志事件的标签值。 |
+|Timestamp|Long|1583683202047000|日志事件的产生时间戳。 |
+|OperationName|String|/api|又称为Span名称。 |
+|ParentSpanId|String|fec891bb8f8XXX|父Span ID。 |
 |ResultCode|String|200|返回码。 |
-|RpcId|String|1.1|表示 Span 之间的父子兄弟关系。 例如 1.1 是 1.1.1 的父亲 Span， 而 1.1.2 和 1.1.1 是兄弟 Span。 |
-|ServiceIp|String|192.168.0.1|Span 所在的机器 IP 地址。 |
-|ServiceName|String|server1|链路所在的微服务名称，又称为应用名称。 |
-|TagEntryList|Array| |Span 中的 Tag 列表。 |
+|RpcId|String|1.1|表示Span之间的父子兄弟关系。 例如1.1是1.1.1的父亲Span， 而1.1.2和1.1.1是兄弟Span。 |
+|ServiceIp|String|192.168.XXX.XXX|服务IP地址，即Span所在的机器IP地址。 |
+|ServiceName|String|server1|服务名称，又称为应用名称。 |
+|SpanId|String|fec891bb8f8XXX|Span ID。 |
+|TagEntryList|Array of TagEntry| |标签列表。 |
 |TagEntry| | | |
-|Key|String|logLevel|Tag Key。 |
-|Value|String|Warning|Tag Value。 |
-|Timestamp|Long|1583683202047000|Span 的产生时间。 |
-|TraceID|String|1c6881aab84191a4|调用链 ID，链路请求的唯一标识。 |
+|Key|String|logLevel|Span的标签键。 |
+|Value|String|Warning|Span的标签值。 |
+|Timestamp|Long|1583683202047000|Span的产生时间戳。 |
+|TraceID|String|1c6881aab84191a4|调用链ID，链路请求的唯一标识。 |
 
 ## 示例
 
@@ -56,80 +61,92 @@ http(s)://[Endpoint]/?Action=GetTrace
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<RequestId>0C1E24B7-A83B-4CFE-AC19-72193092F2E7</RequestId>
-<Spans>
-    <Span>
-        <HaveStack>false</HaveStack>
-        <ServiceIp>11.194.110.238</ServiceIp>
-        <LogEventList>
-        </LogEventList>
-        <OperationName>/adapt_b31oxdxruh@1e6391553ea2619_b31oxdxruh@53df7ad2afe8301/api/traces</OperationName>
-        <ServiceName>xtrace-collector</ServiceName>
-        <RpcId>1</RpcId>
-        <TraceID>547713e07af0139e</TraceID>
-        <Duration>341</Duration>
-        <TagEntryList>
-            <TagEntry>
-                <Value>0</Value>
-                <Key>st</Key>
-            </TagEntry>
-            <TagEntry>
-                <Value>200</Value>
-                <Key>http.status_code</Key>
-            </TagEntry>
-            <TagEntry>
-                <Value>server</Value>
-                <Key>span.kind</Key>
-            </TagEntry>
-        </TagEntryList>
-        <Timestamp>1583683202047000</Timestamp>
-        <ResultCode>0</ResultCode>
-    </Span>
-</Spans>
+<GetTraceResponse> 
+    <RequestId>1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED</RequestId>  
+    <Spans> 
+        <Span> 
+            <HaveStack>false</HaveStack>  
+            <ParentSpanId>fec891bb8f8XXX</ParentSpanId>  
+            <ServiceIp>192.168.XXX.XXX</ServiceIp>  
+            <ServiceName>server1</ServiceName>  
+            <OperationName>/api</OperationName>  
+            <RpcId>1.1</RpcId>  
+            <TraceID>1c6881aab84191a4</TraceID>  
+            <Duration>1000</Duration>  
+            <Timestamp>1583683202047000</Timestamp>  
+            <ResultCode>200</ResultCode>  
+            <SpanId>fec891bb8f8XXX</SpanId>  
+            <TagEntryList> 
+                <TagEntry> 
+                    <Value>Warning</Value>  
+                    <Key>logLevel</Key> 
+                </TagEntry> 
+            </TagEntryList>  
+            <LogEventList> 
+                <LogEvent> 
+                    <Timestamp>1583683202047000</Timestamp>  
+                    <TagEntryList> 
+                        <TagEntry> 
+                            <Value>Warning</Value>  
+                            <Key>logLevel</Key> 
+                        </TagEntry> 
+                    </TagEntryList> 
+                </LogEvent> 
+            </LogEventList> 
+        </Span> 
+    </Spans> 
+</GetTraceResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
-  "RequestId": "0C1E24B7-A83B-4CFE-AC19-72193092F2E7",
-  "Spans": {
-    "Span": [
-      {
-        "HaveStack": false,
-        "ServiceIp": "11.194.110.238",
-        "LogEventList": {
-          "LogEvent": []
-        },
-        "OperationName": "/api/traces",
-        "ServiceName": "xtrace-collector",
-        "RpcId": "1",
-        "TraceID": "547713e07af0139e",
-        "Duration": 341,
-        "TagEntryList": {
-          "TagEntry": [
+    "RequestId":"1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED",
+    "Spans":{
+        "Span":[
             {
-              "Value": "0",
-              "Key": "st"
-            },
-            {
-              "Value": "200",
-              "Key": "http.status_code"
-            },
-            {
-              "Value": "server",
-              "Key": "span.kind"
+                "HaveStack":"false",
+                "ParentSpanId":"fec891bb8f8XXX",
+                "ServiceIp":"192.168.XXX.XXX",
+                "ServiceName":"server1",
+                "OperationName":"/api",
+                "RpcId":"1.1",
+                "TraceID":"1c6881aab84191a4",
+                "Duration":"1000",
+                "Timestamp":"1583683202047000",
+                "ResultCode":"200",
+                "SpanId":"fec891bb8f8XXX",
+                "TagEntryList":{
+                    "TagEntry":[
+                        {
+                            "Value":"Warning",
+                            "Key":"logLevel"
+                        }
+                    ]
+                },
+                "LogEventList":{
+                    "LogEvent":[
+                        {
+                            "Timestamp":"1583683202047000",
+                            "TagEntryList":{
+                                "TagEntry":[
+                                    {
+                                        "Value":"Warning",
+                                        "Key":"logLevel"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
-          ]
-        },
-        "Timestamp": "1583683202047000",
-        "ResultCode": "0"
-      }]
+        ]
     }
-    }
+}
 ```
 
 ## 错误码
