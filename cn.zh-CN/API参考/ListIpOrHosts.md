@@ -1,6 +1,6 @@
 # ListIpOrHosts
 
-调用 ListIpOrHosts 获取链路追踪数据中的 IP 地址或者机器名称，可获取整个地域或某个应用下的所有 IP 地址。
+调用ListIpOrHosts获取应用的IP地址。
 
 ## 调试
 
@@ -10,9 +10,9 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ListIpOrHosts|系统规定参数，取值为 `ListIpOrHosts`。 |
-|RegionId|String|是|cn-beijing|地域 ID，例如杭州填写为 `cn-hangzhou`，北京填写为 `cn-beijing` 等。 |
-|ServiceName|String|否|service1|应用名称，非必选值。若不为空则只查询此应用下的 IP 地址。 |
+|Action|String|是|ListIpOrHosts|系统规定参数，取值为`ListIpOrHosts`。 |
+|RegionId|String|是|cn-beijing|地域ID。 |
+|ServiceName|String|否|service1|应用名称。若为空则查询该地域下所有应用的IP地址。 |
 |StartTime|Long|否|1583683200000|开始时间。 |
 |EndTime|Long|否|1583723776974|结束时间。 |
 
@@ -20,8 +20,8 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|IpNames|List|\[ "10.0.0.0", "10.0.0.1" \]|IP 地址列表 |
-|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求 ID |
+|IpNames|List|\[ "172.19.XXX.XXX", "10.0.X.X" \]|IP地址列表。 |
+|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求ID。 |
 
 ## 示例
 
@@ -35,26 +35,27 @@ http(s)://[Endpoint]/?Action=ListIpOrHosts
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<RequestId>23D9757C-CB58-41A5-BBE7-2A9A0652B2F4</RequestId>
-<IpNames>
-    <IpName>172.19.33.172</IpName>
-    <IpName>null</IpName>
-    <IpName>10.0.0.5</IpName>
-</IpNames>
+<ListIpOrHostsResponse> 
+    <RequestId>23D9757C-CB58-41A5-BBE7-2A9A0652B2F4</RequestId>  
+    <IpNames> 
+        <IpName>172.19.XXX.XXX</IpName>  
+        <IpName>10.0.X.X</IpName> 
+    </IpNames> 
+</ListIpOrHostsResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
   "RequestId": "23D9757C-CB58-41A5-BBE7-2A9A0652B2F4",
   "IpNames": {
     "IpName": [
-      "172.19.33.172",
-      "10.0.0.5"
+      "172.19.XXX.XXX",
+      "10.0.X.X"
     ]
   }
 }
