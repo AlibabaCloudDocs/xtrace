@@ -1,6 +1,6 @@
 # ListSpanNames
 
-调用 ListSpanNames 获取某个地域下所有的 Span 名称，也可获取某个微服务的所有 Span 名称。
+调用ListSpanNames接口查询Span名称列表。
 
 ## 调试
 
@@ -10,8 +10,8 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ListSpanNames|系统规定参数，取值为 `ListSpanNames`。 |
-|RegionId|String|是|cn-beijing|地域 ID，例如杭州填写为 `cn-hangzhou`，北京填写为 `cn-beijing` 等。 |
+|Action|String|是|ListSpanNames|系统规定参数，取值为ListSpanNames。 |
+|RegionId|String|是|cn-beijing|地域ID。 |
 |ServiceName|String|否|service 1|服务名称，又称为应用名称。 |
 |StartTime|Long|否|1575561600000|开始时间，精确到毫秒（ms）。 |
 |EndTime|Long|否|1575622455686|结束时间，精确到毫秒（ms）。 |
@@ -20,8 +20,8 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求 ID |
-|SpanNames|List|"SpanNames": \{ "SpanName": \[ "rpc0", "rpc1.1", "rpc1.1.1"\]\}|Span 名称列表 |
+|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求ID。 |
+|SpanNames|List|\{"SpanName":\["rpc0","rpc1.1","rpc1.1.1"\]\}|Span名称列表。 |
 
 ## 示例
 
@@ -35,18 +35,20 @@ http(s)://[Endpoint]/?Action=ListSpanNames
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<SpanNames>
-    <SpanName>rpc0</SpanName>
-    <SpanName>rpc1.1</SpanName>
-    <SpanName>rpc1.1.1</SpanName>
-</SpanNames>
-<RequestId>79C84C64-9951-477E-96F3-7FA44128C601</RequestId>
+<ListSpanNamesResponse> 
+    <SpanNames> 
+        <SpanName>rpc0</SpanName>  
+        <SpanName>rpc1.1</SpanName>  
+        <SpanName>rpc1.1.1</SpanName> 
+    </SpanNames>  
+    <RequestId>79C84C64-9951-477E-96F3-7FA44128C601</RequestId> 
+</ListSpanNamesResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
