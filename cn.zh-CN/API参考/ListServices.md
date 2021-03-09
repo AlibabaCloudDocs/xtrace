@@ -1,6 +1,6 @@
 # ListServices
 
-调用 ListServices 获取某个地域下的所有应用列表。
+调用ListServices获取应用列表。
 
 ## 调试
 
@@ -10,19 +10,19 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ListServices|系统规定参数，取值为 `ListServices`。 |
-|RegionId|String|是|cn-beijing|地域 ID，例如杭州填写为 `cn-hangzhou`，北京填写为`cn-beijing` 等。 |
-|AppType|String|否|XTRACE|应用类型，非必选值。可填写 `XTRACE` 或不填。 |
+|Action|String|是|ListServices|系统规定参数，取值为`ListServices`。 |
+|RegionId|String|是|cn-beijing|地域ID。 |
+|AppType|String|否|XTRACE|应用类型，取值为`XTRACE`或空。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求 ID。 |
-|Services|Array| |返回的应用列表。 |
+|RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|请求ID。 |
+|Services|Array of Service| |应用列表。 |
 |Service| | | |
-|Pid|String|123k456@abcc6efc437|应用 ID。 |
-|RegionId|String|cn-hangzhou|地域 ID，例如 `cn-hangzhou` 为杭州，`cn-beijing` 为北京等。 |
+|Pid|String|XXXqn3ly@741623b4e915df8|应用ID。 |
+|RegionId|String|cn-hangzhou|地域ID。 |
 |ServiceName|String|a3|应用名称。 |
 
 ## 示例
@@ -37,19 +37,21 @@ http(s)://[Endpoint]/?Action=ListServices
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<Services>
-      <Service>
-            <ServiceName>a3</ServiceName>
-            <Pid>aokcdqn3ly@741623b4e915df8</Pid>
-            <RegionId>cn-hangzhou</RegionId>
-      </Service>
-</Services>
+<ListServicesResponse> 
+    <Services> 
+        <Service> 
+            <ServiceName>a3</ServiceName>  
+            <Pid>XXXqn3ly@741623b4e915df8</Pid>  
+            <RegionId>cn-hangzhou</RegionId> 
+        </Service> 
+    </Services> 
+</ListServicesResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
@@ -57,7 +59,7 @@ http(s)://[Endpoint]/?Action=ListServices
     "Service": [
       {
         "ServiceName": "a3",
-        "Pid": "aokcdqn3ly@741623b4e915df8",
+        "Pid": "XXXqn3ly@741623b4e915df8",
         "RegionId": "cn-hangzhou"
       }
       ]
