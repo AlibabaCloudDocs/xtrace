@@ -2,6 +2,8 @@
 
 在使用链路追踪控制台追踪应用的链路数据之前，需要通过客户端将应用数据上报至链路追踪。本文介绍如何通过Open Telemetry SDK进行应用埋点，并通过Jaeger Export上报链路数据。
 
+
+
 ## 操作步骤
 
 1.  打开pom.xml文件，添加Jar包依赖。
@@ -127,7 +129,7 @@
     }
     ```
 
-3.  下载[\[Demo\]](https://yuque.alibaba-inc.com/docs/share/78105bd6-a7a1-4476-85a1-9b896ac4cefe?#)工程，并将工程中的Token信息替换为前提条件中获取的Token。
+3.  下载[\[Demo\]](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/openTelemetryDemo.zip)工程，并将工程中的Token信息替换为前提条件中获取的Token。
 
 4.  执行以下命令运行Demo。
 
