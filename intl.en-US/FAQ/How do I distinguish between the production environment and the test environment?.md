@@ -16,7 +16,7 @@ For applications in the same region, you can add a tag after the token in the en
 -   A pair of parentheses \(\) is automatically added after the application name. The content of `<tag>` is enclosed in the parentheses.
 -   Tracing Analysis automatically creates the `<tag>` tag for the application. This tag can be used to filter applications.
 
-Assume that the application name is `demo`. Add the `_prod` and `_test` tags after the token, as shown in the following figure.
+Assume that the application name is `demo`. Add the `_prod` and `_test` tags after the token.
 
 **Note:** On the Application Settings page, you can modify or delete a tag. For more information, see [Manage applications and tags](/intl.en-US/Operations in the Console/Application management/Manage applications and tags.md).
 
@@ -69,7 +69,7 @@ The following example shows how to add the `test` tag after the token:
 
 [Overview](/intl.en-US/Before you begin/Overview.md)
 
-[View applications](/intl.en-US/Operations in the Console/Application management/View applications.md)
+[View applications](/intl.en-US/Operations in the Console/View applications.md)
 
 [Manage applications and tags](/intl.en-US/Operations in the Console/Application management/Manage applications and tags.md)
 
