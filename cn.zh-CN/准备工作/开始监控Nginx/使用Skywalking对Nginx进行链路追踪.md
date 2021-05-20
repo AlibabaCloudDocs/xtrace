@@ -20,7 +20,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
     ![Skywalking接入点信息](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6357049061/p207267.png)
 
-    **说明：** 如果应用部署于阿里云生产环境，则选择阿里云vpc网络接入点，否则选择公网接入点。
+    **说明：** 如果应用部署于阿里云生产环境，则选择阿里云VPC网络接入点，否则选择公网接入点。
 
 
 ## 通过Docker镜像快速配置skywalking-nginx-lua
@@ -49,7 +49,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 3.  访问Nginx页面。
 
-    -   在浏览器访问`localhost/nginx.conf`。
+    -   在浏览器上访问`localhost/nginx.conf`。
     -   执行命令`curl "localhost/nginx.conf"`。
 
 ## 通过Dockerfile配置skywalking-nginx-lua
@@ -84,7 +84,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 4.  访问Nginx页面。
 
-    -   在浏览器访问`localhost/nginx.conf`。
+    -   在浏览器上访问`localhost/nginx.conf`。
     -   执行命令`curl "localhost/nginx.conf"`。
 
 ## 在ECS上配置skywalking-nginx-lua
