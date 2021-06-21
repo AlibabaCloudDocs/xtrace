@@ -2,9 +2,13 @@
 
 在使用链路追踪控制台追踪应用的链路数据之前，需要通过客户端将应用数据上报至链路追踪。本文介绍如何通过Jaeger客户端上报Go应用数据。
 
+
+
+
+
 ## 快速开始
 
-1.  运行以下命令，在GOPATH/src目录下载[Demo文件](http://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/tracingtest.zip)。
+1.  运行以下命令，在GOPATH/src目录下载[Demo文件](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/tracingtest.zip)。
 
     ```
     wget http://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/tracingtest.zip && unzip tracingtest.zip
