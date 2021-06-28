@@ -1,8 +1,8 @@
 # 通过Jaeger上报Go应用数据
 
-在追踪应用的链路数据之前，您需要通过客户端将应用数据上报至链路追踪服务端。本文介绍如何通过Jaeger客户端上报Go应用数据，包括使用Jaeger SDK直接上报和使用Jaeger Agent进行上报两种方式，并在文末提供Demo。
+在追踪应用的链路数据之前，您需要通过客户端将应用数据上报至链路追踪服务端。本文介绍如何通过Jaeger客户端上报Go应用数据，包括使用Jaeger SDK上报和使用Jaeger Agent上报两种方式，并在文末提供示例。
 
-## 通过Jaeger SDK直接上报数据
+## 方式一：通过Jaeger SDK上报数据
 
 此处以依赖管理工具Go Modules为例，您可以通过Jaeger SDK埋点直接将数据上报到链路追踪服务端。若使用其他依赖管理工具，请按实际情况操作。
 
@@ -32,7 +32,7 @@
 
 3.  创建span实例对象和数据透传。
 
-    -   如果没有parentSpan
+    -   如果没有parentSpan：
 
         ```
         // 创建Span。
@@ -42,10 +42,10 @@
         // 透传traceId。
         tracer.Inject(span.Context(), opentracing.HTTPHeaders, opentracing.HTTPHeadersCarrier(req.Header))
         ...
-        defer  span.Finish**\(**)
+        defer  span.Finish()
         ```
 
-    -   如果有parentSpan
+    -   如果有parentSpan：
 
         ```
         // 从HTTP/RPC对象解析出spanCtx。
@@ -55,12 +55,12 @@
         defer  span.Finish()
         ```
 
-4.  登录[链路追踪控制台](https://tracing-analysis.console.aliyun.com/)，执行上一步骤后等待30秒，查看上报的数据。
+    详细使用方法，请参见[Go Doc](https://pkg.go.dev/github.com/jaegertracing/jaeger-client-go)。
 
 
-## 通过Jaeger Agent上报数据
+## 方式二：通过Jaeger Agent上报数据
 
-1.  启动Jaeger Agent。具体操作，请参见[t2091014.md\#]()。
+1.  启动Jaeger Agent。具体操作，请参见[安装Jaeger Agent](/cn.zh-CN/准备工作/安装Jaeger Agent.md)。
 
 2.  引入[jaeger-client-go](https://github.com/jaegertracing/jaeger-client-go)。
 
@@ -80,53 +80,74 @@
     }
     ```
 
-4.  使用`go run tracingdemo`命令运行Demo。
+4.  创建span实例对象和数据透传。
 
-5.  登录[链路追踪控制台](https://tracing-analysis.console.aliyun.com/)，执行上一步骤后等待30秒，查看上报的数据。
+    -   如果没有parentSpan：
+
+        ```
+        // 创建Span。
+        span := tracer.StartSpan("myspan")
+        // 设置Tag。
+        clientSpan.SetTag("mytag", "123")
+        // 透传traceId。
+        tracer.Inject(span.Context(), opentracing.HTTPHeaders, opentracing.HTTPHeadersCarrier(req.Header))
+        ...
+        defer  span.Finish()
+        ```
+
+    -   如果有parentSpan：
+
+        ```
+        // 从HTTP/RPC对象解析出spanCtx。
+        spanCtx, _ := tracer.Extract(opentracing.HTTPHeaders, opentracing.HTTPHeadersCarrier(r.Header))
+        span := tracer.StartSpan("myspan", opentracing.ChildOf(spanCtx))
+        ...
+        defer  span.Finish()
+        ```
+
+    详细使用方法，请参见[Go Doc](https://pkg.go.dev/github.com/jaegertracing/jaeger-client-go)。
 
 
-## 使用Demo
+## 使用示例
 
 **通过Jaeger SDK直接上报**
 
 1.  获取接入点信息。具体操作方法，请参见本文前提条件。
 
-2.  运行以下命令，下载[Demo文件](https://arms-apm-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/demo/tracing-demo.zip)。
+2.  运行以下命令，下载[示例文件](https://arms-apm-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/demo/tracing-demo.zip)。
 
     ```
     wget https://arms-apm-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/demo/tracing-demo.zip && unzip tracing-demo.zip
     ```
 
-3.  打开Demo文件夹中的examples/settings.go文件，配置TracingAnalysisEndpoint，将图示①替换为[步骤1](#step_gjw_c8o_zwk)中获取的接入点信息。
+3.  打开示例文件夹中的examples/settings.go文件，配置TracingAnalysisEndpoint，将图示①替换为[步骤1](#step_gjw_c8o_zwk)中获取的接入点信息。
 
     ![jaeger_demo](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4324884261/p289809.png)
 
 4.  使用`go mod tidy`命令整理依赖。
 
-5.  使用`go run tracingdemo`命令运行Demo。
-
-    **说明：** 此Demo默认通过HTTP协议直接上报数据。通过Jaeger Agent上报数据的Demo示例，请参见[通过Jaeger Agent上报](#p1)。
+5.  使用`go run tracingdemo`命令运行示例。
 
 
 **通过Jaeger Agent上报**
 
 1.  获取接入点信息。具体操作方法，请参见本文前提条件。
 
-2.  运行以下命令，下载[Demo文件](https://arms-apm-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/demo/tracing-demo.zip)。
+2.  运行以下命令，下载[示例文件](https://arms-apm-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/demo/tracing-demo.zip)。
 
     ```
     wget https://arms-apm-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/demo/tracing-demo.zip && unzip tracing-demo.zip
     ```
 
-3.  启动Jaeger Agent。具体操作，请参见[t2091014.md\#]()。
+3.  启动Jaeger Agent。具体操作，请参见[安装Jaeger Agent](/cn.zh-CN/准备工作/安装Jaeger Agent.md)。
 
-4.  打开Demo文件中的examples/settings.go文件，将`AgentSwitch`修改为`true`。
+4.  打开示例文件夹中的examples/settings.go文件，将`AgentSwitch`修改为`true`。
 
     ![jaeger_demo](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0071884261/p289900.png)
 
 5.  使用`go mod tidy`命令整理依赖。
 
-6.  使用`go run tracingdemo`命令运行Demo。
+6.  使用`go run tracingdemo`命令运行示例。
 
 
 ## 常见问题
