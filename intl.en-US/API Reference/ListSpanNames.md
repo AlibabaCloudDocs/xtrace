@@ -1,6 +1,6 @@
 # ListSpanNames
 
-Queries the names of all spans in a region or microservice.
+Queries span names.
 
 ## Debugging
 
@@ -10,9 +10,9 @@ Queries the names of all spans in a region or microservice.
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|ListSpanNames|The operation that you want to perform. Set the value to `ListSpanNames`. |
-|RegionId|String|Yes|cn-beijing|The region ID of the instance. For example, you can set the parameter to `cn-hangzhou` for the China \(Hangzhou\) region and `cn-beijing` for the China \(Beijing\) region. |
-|ServiceName|String|No|service 1|The name of the service. |
+|Action|String|Yes|ListSpanNames|The operation that you want to perform. Set the value to ListSpanNames. |
+|RegionId|String|Yes|cn-beijing|The ID of the region. |
+|ServiceName|String|No|service 1|The name of the application. |
 |StartTime|Long|No|1575561600000|The beginning of the time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. |
 |EndTime|Long|No|1575622455686|The end of the time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. |
 
@@ -21,14 +21,14 @@ Queries the names of all spans in a region or microservice.
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
 |RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|The ID of the request. |
-|SpanNames|List|"SpanNames": \{ "SpanName": \[ "rpc0", "rpc1.1", "rpc1.1.1"\]\}|The list of span names. |
+|SpanNames|List|\{"SpanName":\["rpc0","rpc1.1","rpc1.1.1"\]\}|The span names. |
 
 ## Examples
 
 Sample requests
 
 ```
-http(s)://[Endpoint]/? Action=ListSpanNames
+http(s)://[Endpoint]/?Action=ListSpanNames
 &RegionId=cn-beijing
 &<Common request parameters>
 ```
@@ -38,12 +38,14 @@ Sample success responses
 `XML` format
 
 ```
-<SpanNames>
-    <SpanName>rpc0</SpanName>
-    <SpanName>rpc1.1</SpanName>
-    <SpanName>rpc1.1.1</SpanName>
-</SpanNames>
-<RequestId>79C84C64-9951-477E-96F3-7FA44128C601</RequestId>
+<ListSpanNamesResponse> 
+    <SpanNames> 
+        <SpanName>rpc0</SpanName>  
+        <SpanName>rpc1.1</SpanName>  
+        <SpanName>rpc1.1.1</SpanName> 
+    </SpanNames>  
+    <RequestId>79C84C64-9951-477E-96F3-7FA44128C601</RequestId> 
+</ListSpanNamesResponse>
 ```
 
 `JSON` format
