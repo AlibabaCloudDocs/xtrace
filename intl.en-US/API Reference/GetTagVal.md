@@ -1,6 +1,6 @@
 # GetTagVal
 
-Queries the tag values that correspond to a tag key in traced data.
+Queries the tag values that correspond to a tag key.
 
 ## Debugging
 
@@ -10,11 +10,11 @@ Queries the tag values that correspond to a tag key in traced data.
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|GetTagVal|The operation that you want to perform. Set the value to `GetTagVal`. |
-|TagKey|String|Yes|span.kind|The tag key in traced data. |
-|RegionId|String|No|cn-beijing|The region ID of the instance. For example, you can set the parameter to `cn-hangzhou` for the China \(Hangzhou\) region and `cn-beijing` for the China \(Beijing\) region. |
-|ServiceName|String|No|appTest|The name of the service. |
-|SpanName|String|No|createOrder|The name of a span. |
+|Action|String|Yes|GetTagVal|The operation that you want to perform. Set the value to GetTagVal. |
+|TagKey|String|Yes|span.kind|The tag key. |
+|RegionId|String|No|cn-beijing|The ID of the region. |
+|ServiceName|String|No|appTest|The name of the application. |
+|SpanName|String|No|createOrder|The name of the span. |
 |StartTime|Long|No|1575561600000|The beginning of the time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. |
 |EndTime|Long|No|1575622455686|The end of the time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. |
 
@@ -23,14 +23,15 @@ Queries the tag values that correspond to a tag key in traced data.
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
 |RequestId|String|1E2B6A4C-6B83-4062-8B6F-AEEC1FC47DED|The ID of the request. |
-|TagValues|List|"TagValues": \{ "TagValue": \[ "server" \] \}|The list of tag values. |
+|TagValues|List|\{"TagValue":\["server"\]\}|The tag values. |
 
 ## Examples
 
 Sample requests
 
 ```
-http(s)://[Endpoint]/? Action=GetTagVal
+http(s)://[Endpoint]/?Action=GetTagVal
+&TagKey=span.kind
 &<Common request parameters>
 ```
 
@@ -39,22 +40,24 @@ Sample success responses
 `XML` format
 
 ```
-<RequestId>D36507D4-FD30-430B-BEC4-738661CFB86C</RequestId>
-<TagValues>
-    <TagValue>server</TagValue>
-</TagValues>
+<GetTagValResponse> 
+    <RequestId>D36507D4-FD30-430B-BEC4-738661CFB86C</RequestId>  
+    <TagValues> 
+        <TagValue>server</TagValue> 
+    </TagValues> 
+</GetTagValResponse>
 ```
 
 `JSON` format
 
 ```
 {
-    "RequestId": "D36507D4-FD30-430B-BEC4-738661CFB86C",
-    "TagValues": {
-        "TagValue": [
-            "server"
-        ]
-    }
+	"RequestId": "D36507D4-FD30-430B-BEC4-738661CFB86C",
+	"TagValues": {
+		"TagValue": [
+			"server"
+		]
+	}
 }
 ```
 
